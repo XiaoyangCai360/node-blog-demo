@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs')  %>
+    <title>Node Blog | <%= title  %></title>
+<body>
+    <%- include('./partials/nav.ejs')  %>
+
+    <div class="blogs content">
+        <h2>All Blogs</h2>
+        <% if (blogs.length > 0) { %>
+            <% blogs.forEach(blog => { %>
+                <h3><%= blog.title %></h3>
+                <p><%= blog.snippet %></p>
+            <% }); %>
+        <% } else { %>
+            <p>There are no blogs to display...</p>
+        <% } %>    
+    </div>
+
+    <%- include('./partials/footer')  %>
+
+</body>
+</html>
