@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <%- include('partials/head')  %>
-    <title>Node Blog | <%= title  %></title>
+
+<%- include('./partials/head')  %>
 </head>
 <body>
-    <%- include('partials/nav') %>
+    <%- include('./partials/nav') %>
 
     <div class="create-blog content">
-       <form>
+       <form action="/blogs" method="POST">
             <label for="title">Blog Title: </label>
-            <input type="text" id="title" required>
+            <input type="text" id="title" name="title" required>
             <label for="snippet">Blog Snippet: </label>
-            <input type="text" id="snippte" required>
+            <input type="text" id="snippet" name="snippet" required>
             <label for="body">Blog Body: </label>
-            <textarea type="text" id="body" required></textarea>
+            <textarea type="text" id="body" name="body" required></textarea>
             <button>Submit</button>
        </form>
     </div>
