@@ -11,7 +11,9 @@
             <p><%= blog.body %></p>
         </div>
 
-        <a class="delete" data-doc="<%= blog.id %>">Delete</a>
+        <a class="delete" data-doc="<%= blog.id %>">
+            <img src="/trashcan.svg" alt="delete icon">
+        </a>
     </div>
 
     <%- include('../partials/footer')  %>

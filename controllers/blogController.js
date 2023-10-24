@@ -16,10 +16,10 @@ const blog_details = (req, res) => {
     const id = req.params.id;
     Blog.findById(id)
         .then((result) => {
-            res.render('blogs/details', { title: 'Blog Details', blog: result})
+            res.render('blogs/details', { title: 'Blog Details', blog: result});
         })
         .catch((err) => {
-            console.log(err);
+            res.status(404).render('404', { title: 'Blog not found' });
         })
 }
 
@@ -45,7 +45,7 @@ const blog_delete = (req, res) => {
     Blog.findByIdAndDelete(id)
         .then((result) => {
             // for AJAX request, has to send JSON data to the client
-            res.json({ redirect: '/blogs' })
+            res.json({ redirect: '/blogs' });
         })
         .catch((err) => {
             console.log(err);
